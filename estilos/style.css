@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Work Sans", sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+/* Icone do Whatsapp */
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366; /* Cor oficial do WhatsApp */
+  color: #fff;
+  border-radius: 50px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+  z-index: 1000;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+/* Efeito ao passar o mouse */
+.whatsapp-button:hover {
+  transform: scale(1.1);
+  background-color: #20ba5a;
+}
+
+#logo img {
+    width: 60%;
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    background-color: #361d02;
+
+}
+
+.container {
+    max-width: 1200px; /*Em telas maiores manterá a mesma proporção logo e menu*/
+    margin: 0 auto; /*CENTRALIZAÇÃO ABSOLUTA - Está dividindo o max-width de esquerda e direita*/
+    padding: 1rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-list {
+    display: flex; /*Alinhamento horizontal do Menu*/
+    gap: 3rem; 
+}
+
+/* Estilização do Menu */
+.nav-list a {
+    display: inline-block;
+    transition: transform 0.3s ease;
+    text-decoration: none;
+    color: #e9caaa;
+    text-shadow: 0 0 10px #000;
+    font-weight: 500;
+}
+
+.nav-list a:hover {
+    transform: scale(1.2); /* Aumenta o tamanho em 20% */
+    color: #fff; /* Opcional: muda a cor ao mesmo tempo*/
+    text-shadow: 0 0 10px #000;
+    font-weight: 600;
+} 
+
+/* HERO - IMAGEM DO FUNDO */
+
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.8)), url(../imagens/bg00004.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    display: flex; /* Ativa o modo Flexbox */
+    justify-content: center; /* Centro horizontal */
+    align-items: center; /* Centro vertical */
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    text-shadow: 0 0 10px #000;
+    color: #e9caaa;
+}
+
+.hero-content h2 {
+    font-size: 1.5rem;
+    color: #e9caaa;
+    text-shadow: 0 0 10px #000;
+}
+
+/* ---- MENU HAMBURGUER ---- */
+/* Classe para travar o scroll quando o menu abrir */
+body.no-scroll {
+    overflow: hidden;
+}
+
+/* Seleciona todas as seções que você linkou no menu */
+#home, #projetos {
+    scroll-margin-top: 85px; /* Altura do header (aprox 70px) + 15px de respiro */
+}
+
+
+/* Esconder o hambúrguer em telas grandes */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+    z-index: 2000;
+}
+
+.hamburger span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: #e9caaa;
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block; /* Mostra o botão no mobile */
+    }
+
+    .nav-list {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Escondido fora da tela */
+        width: 100%;
+        height: 100vh;
+
+        /* Efeito Vidro Fumê */
+        background-color: #361d02aa; /* Cor com transparência (o 0.85) */
+        backdrop-filter: blur(10px); /* O borrão no fundo */
+        -webkit-backdrop-filter: blur(10px); /* Compatibilidade para Safari */
+
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: 0.5s;
+        z-index: 1500;
+    }
+
+    .nav-list.active {
+        right: 0; /* Entra na tela */
+    }
+
+    /* Animação do X no hambúrguer */
+    .hamburger.active span:nth-child(1) { transform: rotate(-45deg) translate(-5px, 6px); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: rotate(45deg) translate(-5px, -6px); }
+
+    .nav-list li a {
+    display: inline-block;
+    transition: transform 0.3s ease;
+    text-decoration: none;
+    color: #e9caaa;
+    text-shadow: 0 0 10px #000;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+
+}
+
+
+
+
+
+
+
+
+/* MAIN */
+
+
+/* SOBRE */
+
+section {
+    background-color: #e9caaa;
+}
+
+.section-container {
+    max-width: 1200px; /*Em telas maiores manterá a mesma proporção logo e menu*/
+    margin: 0 auto; /*CENTRALIZAÇÃO ABSOLUTA - Está dividindo o max-width de esquerda e direita*/
+    padding: 1rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.texto-sobre h3 {
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 20px;
+}
+
+.texto-sobre p {
+    font-size: 1.5rem;
+    line-height: 50px;
+    text-align: justify;
+    text-indent: 50px;
+    margin-bottom: 100px;
+}
+
+
+/* CARDAPIO */
+
+.cardapio {
+    max-width: 1200px; /*Em telas maiores manterá a mesma proporção logo e menu*/
+    margin: 0 auto; /*CENTRALIZAÇÃO ABSOLUTA - Está dividindo o max-width de esquerda e direita*/
+    padding: 1rem 1rem;
+}
+
+.titulo-galeria {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  /* Aplicando o que aprendemos antes: */
+}
+
+.grid-galeria {
+  display: grid;
+  /* Cria colunas automáticas com no mínimo 250px cada */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 10px; /* Espaço entre as fotos */
+  padding: 20px;
+}
+
+.item-galeria img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover; /* Não deixa a foto esticar ou achatar */
+  border-radius: 10px; /* Cantos arredondados para ficar mais doce */
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.item-galeria img:hover {
+  transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+  cursor: pointer;
+}
+
+/* FOOTER */
+.rodape {
+    background-color: #361d02;
+    height: 300px;
+
+    margin: 0 auto; /*CENTRALIZAÇÃO ABSOLUTA - Está dividindo o max-width de esquerda e direita*/
+    padding: 1rem 2rem;
+}
+
+.rodape h4 {
+    font-size: 1.2rem;
+    color: #e9caaa;
+    margin-top: 50px;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.rodape {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contatos-footer p {
+    color: #e9caaa;
+    font-size: 1.5rem;
+    line-height: 50px;
+}
+
+.midia-sociais-icon {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+
+}
+
+.midia-sociais-icon a {
+    color:#e9caaa;
+    font-size: 1.5rem;
+}
+
+.rodape-final {
+    background-color: #361d02aa;
+    height: 50px;
+
+    margin: 0 auto; /*CENTRALIZAÇÃO ABSOLUTA - Está dividindo o max-width de esquerda e direita*/
+    padding: 1rem 2rem;
+
+    border-top: solid 5px black;
+    text-align: center;
+}
+
+.rodape-final p {
+    font-size: 0.9rem;
+}
