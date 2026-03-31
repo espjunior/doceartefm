@@ -7,6 +7,13 @@
     font-family: "Work Sans", sans-serif;
     list-style: none;
     text-decoration: none;
+    
+}
+
+html, body {
+    overflow-x: hidden; /*Ocultar a barra de rolagem*/
+    width: 100%;
+    scroll-behavior: smooth; /*Deslizar ao clicar nos menus*/
 }
 
 /* Icone do Whatsapp */
@@ -148,6 +155,7 @@ body.no-scroll {
         right: -100%; /* Escondido fora da tela */
         width: 100%;
         height: 100vh;
+        max-width: 100vw;
 
         /* Efeito Vidro Fumê */
         background-color: #361d02aa; /* Cor com transparência (o 0.85) */
@@ -211,8 +219,9 @@ section {
 .texto-sobre h3 {
     font-size: 3rem;
     text-align: center;
-    margin-top: 100px;
-    margin-bottom: 20px;
+    margin-top: 250px;
+    margin-bottom: 50px;
+    color: #361d02;
 }
 
 .texto-sobre p {
@@ -235,8 +244,9 @@ section {
 .titulo-galeria {
   font-size: 2.5rem;
   text-align: center;
-  margin-top: 50px;
+  margin-top: 200px;
   margin-bottom: 30px;
+  color: #361d02;
   /* Aplicando o que aprendemos antes: */
 }
 
@@ -244,8 +254,11 @@ section {
   display: grid;
   /* Cria colunas automáticas com no mínimo 250px cada */
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 10px; /* Espaço entre as fotos */
+  gap: 20px; /* Espaço entre as fotos */
   padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 100px;
 }
 
 .item-galeria img {
@@ -276,13 +289,13 @@ section {
     color: #e9caaa;
     margin-top: 50px;
     margin-bottom: 5px;
-    text-align: left;
+    text-align: center;
 }
 
 .rodape {
     display: flex;
     justify-content: space-between;
-}
+    align-items: center;}
 
 .contatos-footer p {
     color: #e9caaa;
@@ -293,6 +306,7 @@ section {
 .midia-sociais-icon {
     display: flex;
     align-items: center;
+    justify-content: center; /*Centralização dos icones das midias sociais*/
     gap: 1.5rem;
 
 }
@@ -315,4 +329,217 @@ section {
 
 .rodape-final p {
     font-size: 0.9rem;
+}
+
+/* Media Query adicional para corrigir barra de rolagem em mobile */
+@media (max-width: 480px) {
+    html, body {
+        overflow-x: hidden;
+        max-width: 100vw;
+    }
+
+    .hero-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero-content h2 {
+        font-size: 1rem;
+    }
+
+    .texto-sobre h3 {
+        font-size: 1.5rem;
+        margin-top: 50px;
+    }
+
+    .texto-sobre p {
+        font-size: 1rem;
+        line-height: 30px;
+        text-indent: 20px;
+    }
+
+    .grid-galeria {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        padding: 10px;
+    }
+
+    .rodape {
+        height: auto;
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .contatos-footer p {
+        font-size: 0.9rem;
+        line-height: 30px;
+    }
+
+    .midia-sociais-icon {
+        gap: 1rem;
+        margin-top: 20px;
+    }
+
+    .midia-sociais-icon a {
+        font-size: 1rem;
+    }
+}
+
+/* Media Query para LANDSCAPE em mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        height: 100vh;
+        min-height: auto;
+    }
+
+    .hero-content h1 {
+        font-size: 1.2rem;
+    }
+
+    .hero-content h2 {
+        font-size: 0.8rem;
+    }
+
+    .header {
+        position: relative;
+    }
+
+    #logo img {
+        width: 40%;
+    }
+
+    .texto-sobre h3 {
+        font-size: 1.3rem;
+        margin-top: 30px;
+        margin-bottom: 15px;
+    }
+
+    .texto-sobre p {
+        font-size: 0.85rem;
+        line-height: 20px;
+        text-indent: 15px;
+        margin-bottom: 30px;
+    }
+
+    .titulo-galeria {
+        font-size: 1.5rem;
+        margin-top: 30px;
+        margin-bottom: 15px;
+    }
+
+    .grid-galeria {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 8px;
+        padding: 10px;
+        margin-bottom: 30px;
+    }
+
+    .item-galeria img {
+        height: 150px;
+    }
+
+    .rodape {
+        height: auto;
+        flex-direction: row;
+        padding: 0.8rem 1.5rem;
+        gap: 1rem;
+    }
+
+    .rodape h4 {
+        margin-top: 15px;
+        margin-bottom: 5px;
+        font-size: 1rem;
+    }
+
+    .contatos-footer p {
+        font-size: 0.8rem;
+        line-height: 20px;
+    }
+
+    .midia-sociais-icon {
+        gap: 0.8rem;
+        margin-top: 5px;
+    }
+
+    .midia-sociais-icon a {
+        font-size: 1.2rem;
+    }
+
+    .rodape-final {
+        height: auto;
+        padding: 0.5rem 1rem;
+    }
+
+    .rodape-final p {
+        font-size: 0.75rem;
+    }
+}
+
+/* Media Query para LANDSCAPE com altura maior (tablets em landscape) */
+@media (min-height: 500px) and (max-height: 800px) and (orientation: landscape) {
+    .hero {
+        height: 90vh;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-content h2 {
+        font-size: 1rem;
+    }
+
+    .texto-sobre h3 {
+        font-size: 1.8rem;
+        margin-top: 40px;
+        margin-bottom: 20px;
+    }
+
+    .texto-sobre p {
+        font-size: 1rem;
+        line-height: 25px;
+        text-indent: 20px;
+        margin-bottom: 40px;
+    }
+
+    .titulo-galeria {
+        font-size: 1.8rem;
+        margin-top: 40px;
+        margin-bottom: 20px;
+    }
+
+    .grid-galeria {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+        padding: 15px;
+        margin-bottom: 40px;
+    }
+
+    .item-galeria img {
+        height: 200px;
+    }
+
+    .rodape {
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 1rem 2rem;
+        gap: 2rem;
+    }
+
+    .rodape h4 {
+        margin-top: 0;
+        font-size: 1.1rem;
+    }
+
+    .contatos-footer p {
+        font-size: 1rem;
+        line-height: 25px;
+    }
+
+    .midia-sociais-icon {
+        gap: 1rem;
+        margin-top: 10px;
+    }
+
+    .midia-sociais-icon a {
+        font-size: 1.3rem;
+    }
 }
